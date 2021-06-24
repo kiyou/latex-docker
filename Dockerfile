@@ -26,3 +26,4 @@ RUN apt-get update -qy && apt-get install -y \
 # Edit texmf.cnf
 RUN echo "buf_size=10000000" > /etc/texmf/texmf.d/texmf.cnf
 RUN update-texmf
+ENTRYPOINT [ "make" ]
