@@ -1,5 +1,5 @@
-# latex-docker:vscode-jp
-Dockerfile for latex environment for writing academic papers in Japanese using Visual Studio Code
+# latex-docker:vscode
+Dockerfile for latex environment for writing academic papers using Visual Studio Code
 
 ## Base Docker Image
 - mcr.microsoft.com/vscode/devcontainers/base:0-focal
@@ -20,5 +20,3 @@ Dockerfile for latex environment for writing academic papers in Japanese using V
 - pandoc
 - pandoc-citeproc
 - gs
-- texlive-lang-cjk (for Japanese typeset)
-- texlive-lang-japanese (for Japanese typeset)
