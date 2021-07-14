@@ -11,6 +11,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     texlive-extra-utils \
     texlive-latex-recommended \
     texlive-latex-extra \
+    texlive-lang-cjk \
+    texlive-lang-japanese \
     texlive-fonts-recommended \
     texlive-publishers \
     latexmk \

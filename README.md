@@ -1,5 +1,5 @@
-# latex-docker
-Dockerfile for latex environment for writing academic papers
+# latex-docker:jp
+Dockerfile for latex environment for writing academic papers in Japanese
 
 ## Base Docker Image
 - ubuntu:focal
