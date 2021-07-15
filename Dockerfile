@@ -10,9 +10,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     texlive-latex-recommended \
     texlive-latex-extra \
     texlive-fonts-recommended \
+    texlive-plain-generic \
     texlive-publishers \
     latexmk \
     latexdiff \
+    patch \
     pandoc \
     inkscape \
     && apt-get clean \
