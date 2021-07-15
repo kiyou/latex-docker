@@ -14,9 +14,11 @@ Dockerfile for latex environment for writing academic papers using Visual Studio
 - texlive-latex-recommended (lineno.sty)
 - texlive-fonts-recommended
 - texlive-publishers
+- texlive-plain-generic (ulem.sty)
 - latexmk
 - latexdiff
 - inkscape
+- patch
 - pandoc
 - pandoc-citeproc
 - gs
