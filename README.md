@@ -24,6 +24,7 @@ Dockerfiles for latex environment for writing academic papers
 - texlive-plain-generic (ulem.sty)
 - latexmk
 - latexdiff
+- lmodern (for conversion from markdown to pdf by pandoc)
 - inkscape
 - patch
 - pandoc

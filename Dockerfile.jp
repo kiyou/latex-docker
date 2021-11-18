@@ -13,6 +13,7 @@ RUN apt-get update \
     texlive-publishers \
     latexmk \
     latexdiff \
+    lmodern \
     locales \
     pandoc \
     inkscape \
