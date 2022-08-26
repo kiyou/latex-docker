@@ -7,6 +7,9 @@ Dockerfiles for latex environment for writing academic papers
 - vscode: Visual Studio Code environment for papers in English
 - vscode-jp: Visual Studio Code environment for papers in Japanese
 
+## Docker Hub
+[kiyou/latex](https://hub.docker.com/u/kiyou)
+
 ## Base Docker Image
 - ubuntu:focal
 - mcr.microsoft.com/vscode/devcontainers/base:0-focal
@@ -22,6 +25,8 @@ Dockerfiles for latex environment for writing academic papers
 - texlive-fonts-recommended
 - texlive-publishers
 - texlive-plain-generic (ulem.sty)
+- texlive-bibtex-extra
+- biber
 - latexmk
 - latexdiff
 - lmodern (for conversion from markdown to pdf by pandoc)
@@ -32,3 +37,4 @@ Dockerfiles for latex environment for writing academic papers
 - gs
 - texlive-lang-cjk (for Japanese typeset)
 - texlive-lang-japanese (for Japanese typeset)
+
