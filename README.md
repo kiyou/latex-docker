@@ -1,4 +1,7 @@
 # latex-docker
+[![GitHub Container Registry](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml)
+[![DockerHub](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml)
+
 Dockerfiles for latex environment for writing academic papers
 
 ## Dockerfiles
@@ -7,17 +10,24 @@ Dockerfiles for latex environment for writing academic papers
 - vscode: Visual Studio Code environment for papers in English
 - vscode-jp: Visual Studio Code environment for papers in Japanese
 
-## Docker Hub
-[kiyou/latex](https://hub.docker.com/u/kiyou)
+## Images
+- GitHub Container Registory
+
+    [ghcr.io/kiyou/latex](https://github.com/kiyou/latex-docker/pkgs/container/latex)
+
+- Docker Hub
+
+    [kiyou/latex](https://hub.docker.com/u/kiyou)
 
 ## Base Docker Image
-- ubuntu:focal
-- mcr.microsoft.com/vscode/devcontainers/base:0-focal
+- [ubuntu:jammy](https://hub.docker.com/_/ubuntu)
+- [mcr.microsoft.com/vscode/devcontainers/base:0-jammy](https://hub.docker.com/_/microsoft-vscode-devcontainers)
 
 ## Packages
 - bash
 - git
 - make
+- vim
 - texlive (lualatex, bibtex)
 - texlive-extra-utils (texcount)
 - texlive-latex-extra
@@ -37,4 +47,3 @@ Dockerfiles for latex environment for writing academic papers
 - gs
 - texlive-lang-cjk (for Japanese typeset)
 - texlive-lang-japanese (for Japanese typeset)
-
