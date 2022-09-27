@@ -28,7 +28,7 @@ jobs:
           flavor: |
             latest=auto
             prefix=
-            suffix=base,onlatest=false
+            suffix=-base,onlatest=false
       - uses: docker/build-push-action@v3
         with:
           context: .
@@ -46,7 +46,7 @@ jobs:
           flavor: |
             latest=false
             prefix=
-            suffix=jp
+            suffix=-jp
       - uses: docker/build-push-action@v3
         with:
           context: .
@@ -64,7 +64,7 @@ jobs:
           flavor: |
             latest=false
             prefix=
-            suffix=vscode
+            suffix=-vscode
       - uses: docker/build-push-action@v3
         with:
           context: .
@@ -82,7 +82,7 @@ jobs:
           flavor: |
             latest=false
             prefix=
-            suffix=vscode-jp
+            suffix=-vscode-jp
       - uses: docker/build-push-action@v3
         with:
           context: .
@@ -90,4 +90,3 @@ jobs:
           file: ./Dockerfile.vscode-jp
           tags: ${{ steps.meta-vscode-jp.outputs.tags }}
           labels: ${{ steps.meta-vscode-jp.outputs.labels }}
-
