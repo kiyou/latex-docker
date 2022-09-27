@@ -13,43 +13,81 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: docker/metadata-action@v3
-        id: meta
-        with:
-          images: ghcr.io/${{ github.actor }}/latex
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
       - uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/metadata-action@v3
+        id: meta-base
+        with:
+          images: ghcr.io/${{ github.actor }}/latex
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+          flavor: |
+            latest=auto
+            prefix=
+            suffix=base,onlatest=false
       - uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           file: ./Dockerfile.base
-          tags: ${{ steps.meta.outputs.tags }}-base
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-base.outputs.tags }}
+          labels: ${{ steps.meta-base.outputs.labels }}
+      - uses: docker/metadata-action@v3
+        id: meta-jp
+        with:
+          images: ghcr.io/${{ github.actor }}/latex
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+          flavor: |
+            latest=false
+            prefix=
+            suffix=jp
       - uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           file: ./Dockerfile.jp
-          tags: ${{ steps.meta.outputs.tags }}-jp
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-jp.outputs.tags }}
+          labels: ${{ steps.meta-jp.outputs.labels }}
+      - uses: docker/metadata-action@v3
+        id: meta-vscode
+        with:
+          images: ghcr.io/${{ github.actor }}/latex
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+          flavor: |
+            latest=false
+            prefix=
+            suffix=vscode
       - uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           file: ./Dockerfile.vscode
-          tags: ${{ steps.meta.outputs.tags }}-vscode
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-vscode.outputs.tags }}
+          labels: ${{ steps.meta-vscode.outputs.labels }}
+      - uses: docker/metadata-action@v3
+        id: meta-vscode-jp
+        with:
+          images: ghcr.io/${{ github.actor }}/latex
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+          flavor: |
+            latest=false
+            prefix=
+            suffix=vscode-jp
       - uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           file: ./Dockerfile.vscode-jp
-          tags: ${{ steps.meta.outputs.tags }}-vscode-jp
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-vscode-jp.outputs.tags }}
+          labels: ${{ steps.meta-vscode-jp.outputs.labels }}
+
