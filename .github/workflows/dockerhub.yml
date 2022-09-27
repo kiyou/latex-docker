@@ -1,4 +1,4 @@
-name: ci
+name: Build and Push to DockerHub
 
 # Controls when the workflow will run
 on:
