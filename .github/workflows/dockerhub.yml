@@ -33,7 +33,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta-base
         with:
-          images: ghcr.io/${{ github.actor }}/latex
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/latex
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -51,7 +51,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta-jp
         with:
-          images: ghcr.io/${{ github.actor }}/latex
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/latex
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -69,7 +69,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta-vscode
         with:
-          images: ghcr.io/${{ github.actor }}/latex
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/latex
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -87,7 +87,7 @@ jobs:
       - uses: docker/metadata-action@v3
         id: meta-vscode-jp
         with:
-          images: ghcr.io/${{ github.actor }}/latex
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/latex
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}

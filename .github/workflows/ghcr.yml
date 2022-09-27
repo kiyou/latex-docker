@@ -50,6 +50,8 @@ jobs:
       - uses: docker/build-push-action@v3
         with:
           context: .
+          build-args: |
+            REGISTRY=ghcr.io
           push: true
           file: ./Dockerfile.jp
           tags: ${{ steps.meta-jp.outputs.tags }}
@@ -86,6 +88,8 @@ jobs:
       - uses: docker/build-push-action@v3
         with:
           context: .
+          build-args: |
+            REGISTRY=ghcr.io
           push: true
           file: ./Dockerfile.vscode-jp
           tags: ${{ steps.meta-vscode-jp.outputs.tags }}
