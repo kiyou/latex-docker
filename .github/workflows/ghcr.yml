@@ -1,4 +1,4 @@
-name: Build and Push to GitHub Containers Registry
+name: GitHub Container Registry
 
 on:
   push:
