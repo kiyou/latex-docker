@@ -1,6 +1,7 @@
 ARG REGISTRY=docker.io
 ARG USERNAME=kiyou
-FROM ${REGISTRY}/${USERNAME}/latex:vscode
+ARG TAG=latest-vscode
+FROM ${REGISTRY}/${USERNAME}/latex:${TAG}
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
