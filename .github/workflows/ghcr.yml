@@ -44,9 +44,9 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
           flavor: |
-            latest=false
+            latest=auto
             prefix=
-            suffix=-jp
+            suffix=-jp,onlatest=true
       - uses: docker/build-push-action@v3
         with:
           context: .
@@ -64,9 +64,9 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
           flavor: |
-            latest=false
+            latest=auto
             prefix=
-            suffix=-vscode
+            suffix=-vscode,onlatest=true
       - uses: docker/build-push-action@v3
         with:
           context: .
@@ -82,9 +82,9 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
           flavor: |
-            latest=false
+            latest=auto
             prefix=
-            suffix=-vscode-jp
+            suffix=-vscode-jp,onlatest=true
       - uses: docker/build-push-action@v3
         with:
           context: .
