@@ -1,4 +1,4 @@
-ARG REGISTRY=docker.io
+ARG REGISTRY=ghcr.io
 ARG USERNAME=kiyou
 ARG TAG=latest
 FROM ${REGISTRY}/${USERNAME}/latex:${TAG}
