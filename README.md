@@ -2,11 +2,11 @@
 [![GitHub Container Registry](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml)
 [![DockerHub](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml)
 
-Dockerfiles of TexLive environment for writing academic papers and documents
+Dockerfiles of Ubuntu-based TexLive environment for writing academic papers and documents
 
 ## Dockerfiles
-- base: Ubuntu-based TexLive environment for papers in English
-- jp: Ubuntu-based TexLive environment for papers in Japanese
+- `Dockerfile.base`: Ubuntu-based TexLive environment for papers in English
+- `Dockerfile.jp`: Ubuntu-based TexLive environment for papers in Japanese
 
 ## Images
 - GitHub Container Registory
@@ -18,6 +18,7 @@ Dockerfiles of TexLive environment for writing academic papers and documents
     [kiyou/latex](https://hub.docker.com/u/kiyou)
 
 ## Base Docker Image
+
 - [ubuntu](https://hub.docker.com/_/ubuntu)
 
 ## Packages
@@ -44,3 +45,7 @@ Dockerfiles of TexLive environment for writing academic papers and documents
 - gs
 - texlive-lang-cjk (for Japanese typeset)
 - texlive-lang-japanese (for Japanese typeset)
+
+## For Microsoft Visutal Studio Code
+
+This repository includes `.devcontainer/devcontainer.json` for Microsoft Visutal Studio Code.
