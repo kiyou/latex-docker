@@ -66,39 +66,3 @@ jobs:
           file: ./Dockerfile.jp
           tags: ${{ steps.meta-jp.outputs.tags }}
           labels: ${{ steps.meta-jp.outputs.labels }}
-      - uses: docker/metadata-action@v3
-        id: meta-vscode
-        with:
-          images: ${{ secrets.DOCKER_HUB_USERNAME }}/latex
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-          flavor: |
-            latest=auto
-            prefix=
-            suffix=-vscode,onlatest=true
-      - uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          file: ./Dockerfile.vscode
-          tags: ${{ steps.meta-vscode.outputs.tags }}
-          labels: ${{ steps.meta-vscode.outputs.labels }}
-      - uses: docker/metadata-action@v3
-        id: meta-vscode-jp
-        with:
-          images: ${{ secrets.DOCKER_HUB_USERNAME }}/latex
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-          flavor: |
-            latest=auto
-            prefix=
-            suffix=-vscode-jp,onlatest=true
-      - uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          file: ./Dockerfile.vscode-jp
-          tags: ${{ steps.meta-vscode-jp.outputs.tags }}
-          labels: ${{ steps.meta-vscode-jp.outputs.labels }}

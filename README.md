@@ -2,13 +2,11 @@
 [![GitHub Container Registry](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml)
 [![DockerHub](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml)
 
-Dockerfiles for latex environment for writing academic papers
+Dockerfiles of TexLive environment for writing academic papers and documents
 
 ## Dockerfiles
-- base: Ubuntu environment for papers in English
-- jp: Ubuntu environment for papers in Japanese
-- vscode: Visual Studio Code environment for papers in English
-- vscode-jp: Visual Studio Code environment for papers in Japanese
+- base: Ubuntu-based TexLive environment for papers in English
+- jp: Ubuntu-based TexLive environment for papers in Japanese
 
 ## Images
 - GitHub Container Registory
@@ -20,8 +18,7 @@ Dockerfiles for latex environment for writing academic papers
     [kiyou/latex](https://hub.docker.com/u/kiyou)
 
 ## Base Docker Image
-- [ubuntu:jammy](https://hub.docker.com/_/ubuntu)
-- [mcr.microsoft.com/vscode/devcontainers/base:0-jammy](https://hub.docker.com/_/microsoft-vscode-devcontainers)
+- [ubuntu](https://hub.docker.com/_/ubuntu)
 
 ## Packages
 - bash
