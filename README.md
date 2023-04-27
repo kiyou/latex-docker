@@ -2,11 +2,13 @@
 [![GitHub Container Registry](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/ghcr.yml)
 [![DockerHub](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml/badge.svg)](https://github.com/kiyou/latex-docker/actions/workflows/dockerhub.yml)
 
-Dockerfiles of Ubuntu-based TexLive environment for writing academic papers and documents
+Dockerfile of Ubuntu-based TexLive environment for writing academic papers and documents
 
-## Dockerfiles
-- `Dockerfile.base`: Ubuntu-based TexLive environment for papers in English
-- `Dockerfile.jp`: Ubuntu-based TexLive environment for papers in Japanese
+## Dockerfile and stages
+`Dockerfile` uses multi-stage builds:
+- stages:
+    - `base`: Ubuntu-based TexLive environment for documents in English
+    - `jp`: Ubuntu-based TexLive environment for documents in Japanese
 
 ## Images
 - GitHub Container Registory

@@ -32,8 +32,9 @@ jobs:
       - uses: docker/build-push-action@v3
         with:
           context: .
+          target: base
           push: true
-          file: ./Dockerfile.base
+          file: ./Dockerfile
           tags: ${{ steps.meta-base.outputs.tags }}
           labels: ${{ steps.meta-base.outputs.labels }}
       - uses: docker/metadata-action@v3
@@ -50,9 +51,8 @@ jobs:
       - uses: docker/build-push-action@v3
         with:
           context: .
-          build-args: |
-            REGISTRY=ghcr.io
+          target: jp
           push: true
-          file: ./Dockerfile.jp
+          file: ./Dockerfile
           tags: ${{ steps.meta-jp.outputs.tags }}
           labels: ${{ steps.meta-jp.outputs.labels }}
