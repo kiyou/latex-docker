@@ -33,6 +33,15 @@ ENV LC_ALL en_US.UTF-8
 RUN git config --global --add safe.directory /workspace
 WORKDIR /workspace
 
+FROM base as fonts-extra
+RUN apt-get update \
+    && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+    texlive-fonts-extra \
+    && apt-get clean \
+    && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+RUN update-texmf
+
 FROM base as jp
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \

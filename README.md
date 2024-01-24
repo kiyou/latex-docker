@@ -8,6 +8,7 @@ Dockerfile of Ubuntu-based TexLive environment for writing academic papers and d
 `Dockerfile` uses multi-stage builds:
 - stages:
     - `base`: Ubuntu-based TexLive environment for documents in English
+    - `fonts-extra`: `base` with `texlive-fonts-extra` installed
     - `jp`: Ubuntu-based TexLive environment for documents in Japanese
 
 ## Images
@@ -47,6 +48,7 @@ Dockerfile of Ubuntu-based TexLive environment for writing academic papers and d
 - gs
 - texlive-lang-cjk (for Japanese typeset)
 - texlive-lang-japanese (for Japanese typeset)
+- texlive-fonts-extra (for some journals)
 
 ## For Microsoft Visutal Studio Code
 

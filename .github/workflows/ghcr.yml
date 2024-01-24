@@ -38,6 +38,25 @@ jobs:
           tags: ${{ steps.meta-base.outputs.tags }}
           labels: ${{ steps.meta-base.outputs.labels }}
       - uses: docker/metadata-action@v4
+        id: meta-fonts-extra
+        with:
+          images: ghcr.io/${{ github.actor }}/latex
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+          flavor: |
+            latest=auto
+            prefix=
+            suffix=-fonts-extra,onlatest=true
+      - uses: docker/build-push-action@v3
+        with:
+          context: .
+          target: fonts-extra
+          push: true
+          file: ./Dockerfile
+          tags: ${{ steps.meta-fonts-extra.outputs.tags }}
+          labels: ${{ steps.meta-fonts-extra.outputs.labels }}
+      - uses: docker/metadata-action@v4
         id: meta-jp
         with:
           images: ghcr.io/${{ github.actor }}/latex
